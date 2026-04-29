@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>السياسة القانونية | طقس السودان</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(145deg, #f8fafc 0%, #eef2ff 100%);
+            color: #0f172a;
+            line-height: 1.7;
+            padding: 0 0 40px 0;
+        }
+
+        .legal-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 48px 24px 64px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        .legal-header::before {
+            content: "🌤️";
+            font-size: 180px;
+            position: absolute;
+            bottom: -40px;
+            left: -40px;
+            opacity: 0.06;
+            pointer-events: none;
+            transform: rotate(-15deg);
+        }
+        .legal-header h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; position: relative; }
+        .legal-header p  { opacity: 0.85; font-size: 1rem; max-width: 600px; margin: 0 auto; }
+        .app-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(8px);
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-top: 16px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .legal-container { max-width: 900px; margin: -32px auto 0; padding: 0 20px; }
+
+        .legal-tabs {
+            margin-top: 100px;
+            display: flex;
+            gap: 12px;
+            background: white;
+            padding: 6px;
+            border-radius: 60px;
+            margin-bottom: 32px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .tab-btn {
+            flex: 1; text-align: center; padding: 14px 8px;
+            font-weight: 700; font-size: 1rem; border-radius: 50px; cursor: pointer;
+            transition: all 0.25s ease; color: #64748b; background: transparent;
+            border: none; font-family: 'Tajawal', sans-serif;
+        }
+        .tab-btn.active { background: #0f172a; color: white; box-shadow: 0 4px 12px rgba(15,23,42,0.2); }
+
+        .legal-card {
+            background: white; border-radius: 32px; padding: 32px 28px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .content-section { display: none; animation: fadeSlideUp 0.4s ease forwards; }
+        .content-section.active { display: block; }
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            font-size: 1.5rem; font-weight: 800; margin: 32px 0 16px 0;
+            padding-right: 14px; border-right: 5px solid #3b82f6; color: #0f172a;
+        }
+        h2:first-of-type { margin-top: 0; }
+        h3 { font-size: 1.2rem; font-weight: 700; margin-top: 24px; margin-bottom: 12px; color: #1e293b; display: flex; align-items: center; gap: 8px; }
+        .highlight-box {
+            background: #f1f5f9; border-radius: 24px; padding: 18px 22px;
+            margin: 20px 0; border-right: 4px solid #3b82f6;
+        }
+        .highlight-box.warn { border-right-color: #f97316; background: #fff7ed; }
+        .highlight-box.green { border-right-color: #22c55e; background: #f0fdf4; }
+        .badge {
+            display: inline-block; padding: 2px 10px; border-radius: 30px;
+            font-size: 0.7rem; font-weight: 800; margin-right: 6px; vertical-align: middle;
+        }
+        .badge-new { background: #dcfce7; color: #15803d; }
+        .badge-updated { background: #fef9c3; color: #a16207; }
+        .badge-removed { background: #fee2e2; color: #b91c1c; }
+
+        hr { margin: 24px 0; border: none; height: 1px; background: linear-gradient(to left, #e2e8f0, transparent); }
+        .footer-note {
+            margin-top: 32px; text-align: center; font-size: 0.85rem; color: #64748b;
+            border-top: 1px solid #e2e8f0; padding-top: 24px;
+        }
+        ul, ol { padding-right: 24px; margin: 16px 0; }
+        li { margin: 8px 0; }
+        a { color: #3b82f6; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+        code {
+            background: #f1f5f9; color: #0369a1; padding: 2px 7px;
+            border-radius: 6px; font-size: 0.85em; font-family: monospace;
+        }
+        @media (max-width: 600px) {
+            .legal-card { padding: 24px 18px; }
+            h2 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="legal-header">
+    <h1>📜 المركز القانوني</h1>
+    <p>شفافية تامة · خصوصية مطلقة · امتثال كامل</p>
+    <div class="app-badge">🌤️ تطبيق طقس السودان — الإصدار 3.0.0</div>
+</div>
+
+<div class="legal-container">
+    <div class="legal-tabs">
+        <button class="tab-btn active" onclick="switchTab('terms')">🇸🇩 شروط الاستخدام</button>
+        <button class="tab-btn" onclick="switchTab('privacy')">🔐 سياسة الخصوصية</button>
+    </div>
+
+    <div class="legal-card">
+
+        <!-- ════════════════ شروط الاستخدام ════════════════ -->
+        <div id="terms-section" class="content-section active">
+
+            <h2>1. قبول الشروط</h2>
+            <p>باستخدامك لتطبيق <strong>"طقس السودان"</strong> (يُشار إليه بـ "التطبيق")، فإنك توافق على الالتزام بهذه الشروط والأحكام وسياسة الخصوصية. إذا كنت لا توافق على أي جزء من هذه الشروط، يرجى التوقف فوراً عن استخدام التطبيق.</p>
+            <div class="highlight-box">
+                📍 <strong>نطاق التطبيق:</strong> طقس السودان مخصص لتقديم توقعات جوية دقيقة وتحليلات مناخية متقدمة لأكثر من 70 مدينة سودانية، مدعومة بنماذج متعددة (ECMWF، ICON، GFS، MeteoFrance)، ومحرك تحليل جوي فيزيائي (Physio-Intelligence)، ومساعد ذكاء اصطناعي متخصص.
+            </div>
+
+            <h2>2. التراخيص والملكية الفكرية</h2>
+            <p>جميع حقوق الملكية الفكرية المتعلقة بالتطبيق — بما في ذلك الكود المصدري، التصميم، المحركات الفيزيائية المخصصة للطقس السوداني، والعلامات التجارية — مملوكة بالكامل للمطور <strong>علي القاسم</strong>. يُحظر نسخ أو تعديل أو توزيع أي جزء من التطبيق دون إذن خطي مسبق.</p>
+
+            <h2>3. مصادر البيانات الخارجية</h2>
+            <p>يعتمد التطبيق على البيانات التالية:</p>
+            <ul>
+                <li><strong>🌍 Open-Meteo:</strong> مصدر بيانات الطقس والتوقعات وجودة الهواء (نماذج ECMWF، ICON Seamless، MeteoFrance، GFS Global).</li>
+                <li><strong>🤖 Groq Cloud (LLaMA 3.3 70B):</strong> نموذج الذكاء الاصطناعي الأساسي للمساعد الجوي مع نظام توازن 5 مفاتيح.</li>
+                <li><strong>🧠 Google Gemini 2.0 Flash:</strong> نموذج ذكاء اصطناعي احتياطي يُستخدم تلقائياً عند استنفاد مفاتيح Groq.</li>
+                <li><strong>🗺️ Overpass API (OpenStreetMap):</strong> لميزة تتبع السحاب الموضعي (Micro-Location).</li>
+            </ul>
+            <p>نحن لسنا مسؤولين عن انقطاع أو عدم دقة البيانات الواردة من هذه الأطراف، إذ تُقدَّم "كما هي".</p>
+
+            <h2>4. نظام الوصول والموارد التقنية <span class="badge badge-new">جديد</span></h2>
+            <p>يعمل التطبيق وفق نظام رصيد دائم للذكاء الاصطناعي (<code>ai_quota / ai_used</code>) مُدار مباشرةً من قِبل الإدارة عبر Firebase:</p>
+            <ul>
+                <li><strong>الرصيد الافتراضي:</strong> كل مستخدم مسجّل يحصل على رصيد أولي من الإدارة.</li>
+                <li><strong>إعادة الشحن:</strong> يتم يدوياً بالتنسيق مع المطور عبر <strong>واتساب</strong>. لا توجد عمليات دفع آلية داخل التطبيق.</li>
+                <li><strong>الترقية اليدوية:</strong> يُرسل المستخدم المعرّف التقني (UID) للمشرف عبر واتساب، ويقوم المشرف بتحديث الرصيد مباشرةً في قاعدة البيانات.</li>
+                <li><strong>أكواد الترقية:</strong> يمكن الحصول على أكواد ترويجية (Promo Codes) من الإدارة وإدخالها مباشرةً في التطبيق لتفعيل اشتراك فوري.</li>
+            </ul>
+            <div class="highlight-box warn">
+                ⚠️ <strong>لا يوجد نظام دفع إلكتروني مدمج</strong> في التطبيق حالياً. أي طرف يدّعي قبول مدفوعات باسم التطبيق خارج القناة الرسمية (واتساب المطور) يُعدّ غير مخوّل.
+            </div>
+
+            <h2>5. الأمان والوصول إلى الجهاز</h2>
+            <ul>
+                <li><strong>🔑 المصادقة:</strong> تتم عبر <strong>Firebase Authentication</strong> (بريد إلكتروني + كلمة مرور). أنت المسؤول عن سرية بيانات الدخول.</li>
+                <li><strong>📍 الموقع الجغرافي (GPS):</strong> يُطلب الإذن لإظهار الطقس في موقعك الحالي. لا يُتتبع الموقع في الخلفية ولا يُشارَك مع أي طرف.</li>
+                <li><strong>🔔 الإشعارات:</strong> يطلب التطبيق إذن الإشعارات لإرسال تنبيهات الأمطار والغبار والسحب الركامية وفقاً لإعداداتك.</li>
+                <li><strong>💾 التخزين المحلي:</strong> يُستخدم <code>localStorage</code> لحفظ بيانات الطقس مؤقتاً (TTL 15 دقيقة) وإعدادات المستخدم، مما يتيح تجربة عدم الاتصال.</li>
+                <li><strong>☁️ الكاش السحابي:</strong> يتم تخزين بيانات الطقس مؤقتاً في <strong>Firestore (مجموعة wxgrid)</strong> لتقليل الطلبات المتكررة على واجهات API وخفض استهلاك الكوتة.</li>
+            </ul>
+
+            <h2>6. السلوك المحظور</h2>
+            <ul>
+                <li>⛔ محاولة اختراق أو تزوير بيانات Firestore أو التحايل على نظام رصيد الذكاء الاصطناعي.</li>
+                <li>⛔ استخدام التطبيق لأغراض غير قانونية أو نشر محتوى ضار.</li>
+                <li>⛔ إجراء طلبات آلية مفرطة تُسبّب استنزاف مفاتيح Groq أو موارد الخادم.</li>
+                <li>⛔ انتحال شخصية الإدارة أو المطور لاستلام مدفوعات أو بيانات من مستخدمين آخرين.</li>
+            </ul>
+
+            <h2>7. إخلاء المسؤولية</h2>
+            <div class="highlight-box warn">
+                ⚠️ <strong>تنبيه مهم:</strong> توقعات الطقس هي تقديرات علمية ولا تضمن الدقة الكاملة. لا نتحمل أي مسؤولية عن أضرار قد تنشأ عن الاعتماد على هذه التوقعات في قرارات الزراعة أو السفر أو الأنشطة الميدانية.
+            </div>
+
+            <h2>8. التعديلات والتحديثات</h2>
+            <p>نحتفظ بالحق في تعديل هذه الشروط أو تحديث التطبيق في أي وقت. سيتم إشعارك بأي تغييرات جوهرية عبر التطبيق مباشرةً. استمرارك في الاستخدام بعد التعديلات يعني قبولك للشروط الجديدة.</p>
+
+            <h2>9. القانون الواجب التطبيق</h2>
+            <p>تخضع هذه الشروط لقوانين <strong>جمهورية السودان</strong>، مع مراعاة القوانين الدولية لحماية البيانات عند التعامل مع خدمات Firebase و Google و Groq التي تعمل من ولايات قضائية مختلفة.</p>
+
+            <div class="footer-note">
+                آخر تحديث: 29 أبريل 2026 · الإصدار 3.0.0 · المطور: علي القاسم 🇸🇩
+            </div>
+        </div>
+
+        <!-- ════════════════ سياسة الخصوصية ════════════════ -->
+        <div id="privacy-section" class="content-section">
+
+            <h2>1. البيانات التي نجمعها</h2>
+            <p>نتبنى مبدأ <strong>"تجميع البيانات بأقل قدر ممكن"</strong>. البيانات المجمّعة تشمل:</p>
+            <ul>
+                <li><strong>📍 الموقع الجغرافي (GPS):</strong> فقط عند منح الإذن الصريح، لعرض طقس موقعك الحالي. لا يُخزَّن سجل المواقع ولا يُرسَل لأي طرف.</li>
+                <li><strong>👤 معلومات الحساب:</strong> البريد الإلكتروني، الاسم المعروض، والمدن المفضلة — مخزّنة في Firestore لمزامنة الإعدادات عبر الأجهزة.</li>
+                <li><strong>🔑 المعرّف التقني (UID):</strong> معرف Firebase الفريد لكل مستخدم، يُستخدم <em>حصراً</em> لإدارة رصيد الذكاء الاصطناعي (<code>ai_quota/ai_used</code>) ولربط الترقيات اليدوية. لا يُشارَك مع أي طرف خارجي.</li>
+                <li><strong>📊 رصيد الذكاء الاصطناعي:</strong> يتم تتبع عدد طلبات المساعد الذكي المستخدمة (<code>ai_used</code>) والحصة الكلية (<code>ai_quota</code>) في Firestore لضمان عدالة الاستخدام.</li>
+                <li><strong>⚙️ إعدادات الواجهة:</strong> (المظهر، الأيقونات، تفضيلات الإشعارات، مدن المقارنة) تُخزَّن محلياً وفي السحابة.</li>
+                <li><strong>📦 كاش بيانات الطقس:</strong> تُخزَّن بيانات الطقس مؤقتاً في Firestore (مجموعة <code>wxgrid</code>) لمدة 15 دقيقة لتحسين الأداء، ثم تُستبدل تلقائياً.</li>
+            </ul>
+            <div class="highlight-box green">
+                🔒 <strong>التزامنا:</strong> لا نبيع بياناتك، ولا نشاركها مع شبكات إعلانية، ولا نستخدمها لأغراض التسويق السلوكي.
+            </div>
+
+            <h2>2. كيف نستخدم بياناتك؟</h2>
+            <ul>
+                <li>✅ لتشغيل الميزات الأساسية: جلب الطقس، التوقعات 14 يوماً، رادار السحب الركامية، مقارنة المدن، جودة الهواء.</li>
+                <li>✅ لتمكين المساعد الذكي من الرد على استفساراتك — تُرسَل الاستفسارات إلى خوادم Groq/Gemini عبر اتصال HTTPS مشفر.</li>
+                <li>✅ لإدارة رصيد الذكاء الاصطناعي ومنع الإساءة في الاستخدام.</li>
+                <li>✅ لمزامنة المفضلة والإعدادات عبر أجهزتك.</li>
+                <li>✅ لتفعيل الترقيات والأكواد الترويجية يدوياً من قِبل الإدارة.</li>
+                <li>✅ لإرسال إشعارات الطقس (أمطار، غبار، رعد) وفق إعداداتك فقط.</li>
+            </ul>
+
+            <h2>3. الأطراف الثالثة والخدمات الخارجية</h2>
+            <ul>
+                <li><strong>🌍 Open-Meteo:</strong> <a href="https://open-meteo.com/en/terms" target="_blank">سياسة Open-Meteo</a> — بيانات الطقس والتوقعات وجودة الهواء. لا تحتاج إنشاء حساب.</li>
+                <li><strong>🔥 Firebase (Google):</strong> <a href="https://firebase.google.com/support/privacy" target="_blank">سياسة Firebase</a> — المصادقة، Firestore (قواعد البيانات)، الإشعارات.</li>
+                <li><strong>🤖 Groq Cloud:</strong> <a href="https://groq.com/privacy-policy/" target="_blank">سياسة Groq</a> — نموذج LLaMA 3.3. تُرسَل محادثات المساعد الذكي إلى خوادمهم لمعالجتها.</li>
+                <li><strong>🧠 Google Gemini:</strong> <a href="https://policies.google.com/privacy" target="_blank">سياسة Google</a> — نموذج احتياطي للمساعد الذكي.</li>
+                <li><strong>🗺️ OpenStreetMap / Overpass API:</strong> لميزة تتبع السحاب الموضعي. بيانات مفتوحة المصدر لا تتطلب حساباً.</li>
+                <li><strong>📊 Chart.js وSwiper.js:</strong> مكتبات مفتوحة المصدر تعمل محلياً، لا ترسل أي بيانات.</li>
+            </ul>
+            <p>لم يعد التطبيق يستخدم <strong>OxaPay</strong> أو أي بوابة دفع إلكتروني آلي. <span class="badge badge-removed">محذوف</span></p>
+
+            <h2>4. تخزين البيانات وأمنها</h2>
+            <ul>
+                <li><strong>Firebase Firestore:</strong> مشفّرة أثناء النقل (TLS) وأثناء التخزين. تحكمها قواعد أمان Firestore لمنع الوصول غير المصرح به.</li>
+                <li><strong>localStorage:</strong> تخزين محلي على جهازك، لا يُرسَل تلقائياً لأي خادم.</li>
+                <li><strong>مفاتيح Groq:</strong> مُشفَّرة بترميز base64 معكوس في الكود. لا يمكن الوصول إليها من واجهة المستخدم مباشرةً.</li>
+            </ul>
+
+            <h2>5. حقوقك فيما يتعلق ببياناتك</h2>
+            <ul>
+                <li><strong>📥 الوصول:</strong> تصفح بياناتك المحفوظة عبر صفحة "الحساب" داخل التطبيق.</li>
+                <li><strong>✏️ التصحيح:</strong> تعديل اسمك أو إعداداتك في أي وقت.</li>
+                <li><strong>🗑️ الحذف النهائي:</strong> قسم "منطقة الخطر" في الإعدادات يتيح حذف حسابك وجميع بياناتك نهائياً (يشمل: سجل المستخدم، الاشتراكات، المفضلة). <em>هذا الإجراء لا يمكن التراجع عنه.</em></li>
+                <li><strong>🚫 حظر الحساب:</strong> في حالة إساءة الاستخدام، يحق للإدارة تعليق الحساب مع إشعار بالسبب.</li>
+            </ul>
+            <p>لأي استفسار بخصوص بياناتك، تواصل معنا عبر واتساب من قسم "الدعم والتواصل" في الإعدادات.</p>
+
+            <h2>6. الإشعارات والتنبيهات</h2>
+            <p>يرسل التطبيق إشعارات محلية (على الجهاز) للتنبيه بالأمطار، الغبار، والسحب الركامية. يمكنك تفعيل أو تعطيل كل نوع من التنبيهات بشكل مستقل من الإعدادات. لا يتم إرسال إشعارات push من خوادم بعيدة في الإصدار الحالي.</p>
+
+            <h2>7. حماية الأطفال</h2>
+            <p>التطبيق غير موجه للأطفال دون سن 13 عاماً. إذا اكتشفنا جمع بيانات من طفل دون السن القانونية، سنحذفها فوراً.</p>
+
+            <h2>8. التعديلات على السياسة</h2>
+            <p>قد نحدّث هذه السياسة دورياً. سيتم إشعارك بالتغييرات الجوهرية عبر رسالة داخل التطبيق. استمرارك في الاستخدام بعد التعديلات يعني قبولك للسياسة الجديدة.</p>
+
+            <div class="highlight-box green">
+                📢 <strong>آخر تحديث:</strong> 29 أبريل 2026 · الإصدار 3.0.0
+                <br><small style="opacity:0.75;">التغييرات الرئيسية: إزالة OxaPay، إضافة نظام رصيد الذكاء الاصطناعي الدائم، تحديث خدمات Groq/Gemini.</small>
+            </div>
+
+            <div class="footer-note">
+                <p>© 2026 تطبيق طقس السودان — جميع الحقوق محفوظة للمطور علي القاسم 🇸🇩</p>
+                <p style="font-size: 0.7rem; margin-top: 8px;">للتواصل الفني أو الاستفسارات القانونية: واتساب داخل التطبيق ⚡</p>
+            </div>
+        </div>
+
+    </div><!-- .legal-card -->
+</div><!-- .legal-container -->
+
+<script>
+function switchTab(tabName) {
+    document.getElementById('terms-section').classList.toggle('active', tabName === 'terms');
+    document.getElementById('privacy-section').classList.toggle('active', tabName === 'privacy');
+    document.querySelectorAll('.tab-btn').forEach(function(btn, i) {
+        btn.classList.toggle('active', (i === 0) === (tabName === 'terms'));
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
