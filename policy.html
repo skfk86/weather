@@ -79,14 +79,30 @@
         .content-section { display: none; animation: fadeIn 0.5s ease; }
         .content-section.active { display: block; }
 
-        h2 { color: var(--primary); font-size: 1.25rem; border-right: 4px solid var(--accent); padding-right: 10px; }
-        
+        h2 { color: var(--primary); font-size: 1.25rem; border-right: 4px solid var(--accent); padding-right: 10px; margin: 22px 0 10px; }
+        h2:first-of-type { margin-top: 0; }
+
         .law-box {
             background: #f8fafc;
             border-radius: 10px;
             padding: 15px;
             margin-bottom: 15px;
             border-right: 2px solid #cbd5e1;
+        }
+
+        .law-box.ads {
+            border-right-color: #8b5cf6;
+            background: #f5f3ff;
+        }
+
+        .law-box.warn {
+            border-right-color: #f97316;
+            background: #fff7ed;
+        }
+
+        .law-box.green {
+            border-right-color: #22c55e;
+            background: #f0fdf4;
         }
 
         .badge {
@@ -97,6 +113,20 @@
             font-size: 0.75rem;
             font-weight: bold;
         }
+
+        .badge-new {
+            background: #dcfce7;
+            color: #15803d;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        ul { padding-right: 20px; margin: 10px 0; }
+        li { margin: 6px 0; }
+        a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -116,11 +146,13 @@
 <div class="container">
     <div class="card">
         <div class="nav-tabs">
-            <div class="tab active" onclick="showTab('terms')">شروط الاستخدام</div>
-            <div class="tab" onclick="showTab('privacy')">الخصوصية</div>
+            <div class="tab active" onclick="showTab('terms', this)">شروط الاستخدام</div>
+            <div class="tab" onclick="showTab('privacy', this)">الخصوصية</div>
         </div>
 
+        <!-- ════ شروط الاستخدام ════ -->
         <div id="terms" class="content-section active">
+
             <h2>1. الاتفاقية البرمجية</h2>
             <div class="law-box">
                 <p>هذا التطبيق مقدم من قبل المطور <strong>علي (skfk86)</strong>. استخدامك للتطبيق يعني موافقتك الصريحة على كافة البنود الواردة هنا.</p>
@@ -129,14 +161,36 @@
             <h2>2. إخلاء المسؤولية التقنية <span class="badge">هام</span></h2>
             <p>تطبيقاتنا (مثل ود السحاب) تعتمد على واجهات برمجة تطبيقات (APIs) خارجية. نحن لا نضمن توفر الخدمة بنسبة 100% ولا نتحمل مسؤولية أي قرارات تُبنى على بيانات الطقس أو الأسعار المعروضة.</p>
 
-            <h2>3. السلوك المحظور</h2>
-            <p>يُحظر تماماً محاولة الوصول غير المصرح به لقواعد البيانات (Firebase) أو محاولة تعطيل خدمات الـ API المرتبطة بالتطبيقات.</p>
+            <h2>3. الإعلانات داخل التطبيق <span class="badge-new">جديد</span></h2>
+            <div class="law-box ads">
+                <p>📢 تعرض تطبيقاتنا إعلانات من <strong>Google AdMob</strong> لدعم استمرارية الخدمة المجانية. أنواع الإعلانات المستخدمة:</p>
+                <ul>
+                    <li><strong>📺 الإعلانات البينية (Interstitial):</strong> تظهر في انتقالات محددة داخل التطبيق.</li>
+                    <li><strong>🎁 إعلانات المكافأة (Rewarded):</strong> اختيارية بالكامل — تُعرض فقط بموافقتك للحصول على مزايا إضافية.</li>
+                </ul>
+            </div>
+            <div class="law-box warn">
+                ⚠️ لا تتحكم تطبيقاتنا في محتوى الإعلانات المعروضة — يخضع ذلك حصراً لسياسات <a href="https://policies.google.com/privacy" target="_blank">Google AdMob</a>.
+            </div>
+
+            <h2>4. السلوك المحظور</h2>
+            <ul>
+                <li>⛔ محاولة الوصول غير المصرح به لقواعد البيانات (Firebase) أو تعطيل خدمات الـ API.</li>
+                <li>⛔ استخدام أدوات حجب الإعلانات (Ad Blockers) أو التحايل على نظام الإعلانات.</li>
+                <li>⛔ إساءة استخدام أنظمة الرصيد أو الاشتراكات بأي وسيلة.</li>
+            </ul>
+
         </div>
 
+        <!-- ════ الخصوصية ════ -->
         <div id="privacy" class="content-section">
+
             <h2>1. جمع البيانات</h2>
             <div class="law-box">
-                <p><strong>الموقع الجغرافي:</strong> يتم الوصول لموقعك فقط لتزويدك بالخدمة (مثل طقس منطقتك) ولا نقوم ببيعه أو مشاركته مع أطراف ثالثة لأغراض إعلانية.</p>
+                <p><strong>📍 الموقع الجغرافي:</strong> يتم الوصول لموقعك فقط لتزويدك بالخدمة (مثل طقس منطقتك) ولا نقوم ببيعه أو مشاركته مع أطراف ثالثة لأغراض إعلانية.</p>
+            </div>
+            <div class="law-box">
+                <p><strong>📢 معرّف الإعلان (Advertising ID):</strong> قد تجمع Google AdMob معرّف الإعلان الخاص بجهازك لعرض إعلانات ملائمة. يمكنك إعادة ضبطه أو إيقاف التخصيص من: <strong>إعدادات الجهاز ← Google ← الإعلانات</strong>.</p>
             </div>
 
             <h2>2. أمن المعلومات</h2>
@@ -144,22 +198,33 @@
 
             <h2>3. ملفات تعريف الارتباط</h2>
             <p>نستخدم التخزين المحلي (Local Storage) لحفظ إعدادات الوضع الليلي وتفضيلات المستخدم لتوفير تجربة أسرع.</p>
+
+            <h2>4. الأطراف الثالثة</h2>
+            <ul>
+                <li><strong>🔥 Firebase (Google):</strong> <a href="https://firebase.google.com/support/privacy" target="_blank">سياسة Firebase</a> — المصادقة وقواعد البيانات.</li>
+                <li><strong>📢 Google AdMob:</strong> <a href="https://policies.google.com/privacy" target="_blank">سياسة Google</a> — شبكة الإعلانات.</li>
+                <li><strong>🤖 Groq / Gemini:</strong> خدمات الذكاء الاصطناعي في بعض التطبيقات.</li>
+            </ul>
+
+            <div class="law-box green" style="margin-top: 16px;">
+                🔒 <strong>التزامنا:</strong> لا نبيع بياناتك ولا نشاركها مع أي طرف خارج نطاق الخدمة المباشرة.
+            </div>
+
         </div>
 
-        <div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 40px;">
-            <p>آخر تحديث: 29 أبريل 2026</p>
-            <p>حقوق الملكية محفوظة للمطور علي - الخرطوم بحري</p>
+        <div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+            <p>آخر تحديث: 6 يونيو 2026</p>
+            <p>حقوق الملكية محفوظة للمطور علي — الخرطوم بحري 🇸🇩</p>
         </div>
     </div>
 </div>
 
 <script>
-    function showTab(tabId) {
+    function showTab(tabId, el) {
         document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        
         document.getElementById(tabId).classList.add('active');
-        event.currentTarget.classList.add('active');
+        el.classList.add('active');
     }
 </script>
 
