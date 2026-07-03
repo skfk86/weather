@@ -224,12 +224,19 @@
   .loc-row div b{display:block; margin-bottom:2px;}
   .loc-row div span{color:var(--ink-soft); font-size:0.92rem;}
 
-  .map-block{
-    background: repeating-linear-gradient(45deg, var(--teal) 0 2px, transparent 2px 22px), var(--maroon);
-    border-radius:18px; display:flex; flex-direction:column; align-items:center; justify-content:center;
-    color:#FBF4E4; min-height:260px; text-align:center; padding:24px; font-weight:700;
+  .map-col{ display:flex; flex-direction:column; gap:12px; height:100%; }
+  .map-frame{
+    border-radius:18px; overflow:hidden; border:1px solid var(--line);
+    min-height:260px; flex:1; background:var(--bg-card);
   }
-  .map-block svg{width:34px; height:34px; margin-bottom:10px;}
+  .map-frame iframe{ width:100%; height:100%; min-height:260px; display:block; }
+  .map-link{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    background:var(--bg-card); border:1px solid var(--line); border-radius:14px;
+    padding:12px; font-weight:700; color:var(--maroon); font-size:0.92rem;
+    transition:background .2s ease, color .2s ease;
+  }
+  .map-link:hover{background:var(--maroon); color:#FBF4E4; border-color:var(--maroon);}
 
   .big-cta{ margin-top:26px; width:100%; justify-content:center; font-size:1.05rem; }
 
@@ -458,11 +465,18 @@
           تواصل واتساب الآن
         </button>
       </div>
-      <div class="map-block">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.3"></circle></svg>
-        عجمان، الإمارات العربية المتحدة
-        <br>
-        <span style="font-weight:400; font-size:0.85rem; opacity:0.85; margin-top:6px;">(ضيف رابط خرائط قوقل أو صورة الموقع هنا لاحقاً)</span>
+      <div class="map-col">
+        <div class="map-frame">
+          <iframe
+            src="https://www.google.com/maps?q=25.3906549,55.4490154&z=16&output=embed"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="موقع رزق على الخريطة — شارع خليفة بن زايد، عجمان">
+          </iframe>
+        </div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=25.3906549,55.4490154" target="_blank" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.3"></circle></svg></span>
+          افتح الموقع في خرائط قوقل
+        </a>
       </div>
     </div>
   </section>
