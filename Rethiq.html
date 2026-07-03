@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رزق | Rethiq — كريمات وعطور</title>
+<meta name="description" content="رزق — كريمات وعطور مستوحاة من تراث الجمال السوداني، عجمان. تصفح، تواصل واتساب، وتعال قابلنا في المحل.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F1E4CC;
+    --bg-card: #FBF4E4;
+    --ink: #2A1810;
+    --ink-soft: #5C4630;
+    --maroon: #7A1B2E;
+    --maroon-dark: #591320;
+    --gold: #C79A3E;
+    --gold-light: #E4C77A;
+    --teal: #0E3D3B;
+    --clay: #B97A4C;
+    --line: rgba(42,24,16,0.12);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Tajawal', sans-serif;
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3, .kufi{
+    font-family:'Reem Kufi', sans-serif;
+    font-weight:700;
+  }
+
+  .quote{ font-family:'Aref Ruqaa', serif; }
+
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  button{font-family:inherit; cursor:pointer; border:none; background:none;}
+  img{max-width:100%; display:block;}
+
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 24px; }
+
+  /* ---------- icons ---------- */
+  .icon{
+    display:inline-flex;
+    width:18px;
+    height:18px;
+    flex-shrink:0;
+    color:currentColor;
+  }
+  .icon svg{width:100%; height:100%;}
+
+  /* ---------- weave divider (signature element) ---------- */
+  .weave{
+    height:30px;
+    width:100%;
+    background-image:
+      conic-gradient(from 45deg at 50% 50%,
+        var(--gold) 0 90deg,
+        transparent 90deg 180deg,
+        var(--maroon) 180deg 270deg,
+        transparent 270deg 360deg);
+    background-size:30px 30px;
+    background-repeat:repeat-x;
+    background-color:var(--teal);
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(241,228,204,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-bar{
+    display:flex; align-items:center; justify-content:space-between; padding:16px 24px;
+  }
+  .logo{ font-size:1.7rem; color:var(--maroon); display:flex; align-items:baseline; gap:8px; }
+  .logo .lat{
+    font-family:'Tajawal', sans-serif; font-weight:400; font-size:0.85rem;
+    color:var(--ink-soft); letter-spacing:2px;
+  }
+  nav ul{ display:flex; gap:34px; font-weight:500; }
+  nav a{ position:relative; padding:4px 0; }
+  nav a::after{
+    content:""; position:absolute; right:0; bottom:-2px; width:0; height:2px;
+    background:var(--gold); transition:width .25s ease;
+  }
+  nav a:hover::after{width:100%;}
+
+  .cta-header{
+    background:var(--maroon); color:#FBF4E4; padding:10px 22px; border-radius:30px;
+    font-weight:700; font-size:0.92rem; display:inline-flex; align-items:center; gap:8px;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .cta-header:hover{background:var(--maroon-dark); transform:translateY(-1px);}
+
+  .burger{ display:none; flex-direction:column; gap:5px; }
+  .burger span{width:26px; height:2px; background:var(--ink);}
+
+  /* ---------- hero ---------- */
+  .hero{ position:relative; padding:90px 0 70px; text-align:center; overflow:hidden; }
+  .hero::before{
+    content:""; position:absolute; inset:0;
+    background-image:
+      repeating-linear-gradient(45deg, var(--clay) 0 2px, transparent 2px 26px),
+      repeating-linear-gradient(-45deg, var(--teal) 0 2px, transparent 2px 26px);
+    opacity:0.06; pointer-events:none;
+  }
+  .eyebrow{
+    display:inline-block; font-size:0.85rem; letter-spacing:3px; color:var(--teal);
+    font-weight:700; margin-bottom:18px;
+  }
+  .hero h1{ font-size:clamp(3.2rem, 9vw, 6.5rem); color:var(--maroon); line-height:1; margin-bottom:18px; }
+  .hero p.tag{ max-width:560px; margin:0 auto 36px; font-size:1.15rem; color:var(--ink-soft); }
+  .hero-actions{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+  .btn-primary, .btn-ghost{
+    padding:14px 30px; border-radius:30px; font-weight:700; font-size:1rem;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-primary{ background:var(--teal); color:#F1E4CC; }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 22px rgba(14,61,59,0.28);}
+  .btn-ghost{ background:transparent; border:1.5px solid var(--ink); color:var(--ink); }
+  .btn-ghost:hover{background:var(--ink); color:var(--bg);}
+
+  /* ---------- story ---------- */
+  .story{ padding:80px 0; }
+  .story-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:center; }
+  .story-mark{ font-size:5.5rem; color:var(--gold); font-family:'Aref Ruqaa', serif; line-height:1; }
+  .story h2{ font-size:2.1rem; color:var(--maroon); margin-bottom:20px; }
+  .story p{ color:var(--ink-soft); margin-bottom:16px; font-size:1.02rem; }
+  .ritual-tags{ display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+  .ritual-tags span{
+    background:var(--bg-card); border:1px solid var(--line); padding:8px 16px;
+    border-radius:20px; font-size:0.88rem; color:var(--teal); font-weight:700;
+  }
+
+  /* ---------- section heading ---------- */
+  .section-head{ text-align:center; max-width:640px; margin:0 auto 50px; }
+  .section-head .eyebrow{margin-bottom:10px;}
+  .section-head h2{ font-size:2.3rem; color:var(--maroon); margin-bottom:12px; }
+  .section-head p{color:var(--ink-soft);}
+
+  /* ---------- products ---------- */
+  .products{ padding:80px 0; }
+  .grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:26px; }
+  .card{
+    background:var(--bg-card); border:1px solid var(--line); border-radius:18px; overflow:hidden;
+    display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease;
+    opacity:0; transform:translateY(18px);
+  }
+  .card.in-view{opacity:1; transform:translateY(0);}
+  .card:hover{transform:translateY(-6px); box-shadow:0 16px 30px rgba(42,24,16,0.14);}
+
+  .card-media{
+    height:170px; display:flex; align-items:center; justify-content:center; position:relative;
+  }
+  .card-media.cream{background:linear-gradient(135deg, var(--clay), var(--gold-light));}
+  .card-media.perfume{background:linear-gradient(135deg, var(--teal), #1c5c58);}
+  .card-media svg{width:44px; height:44px; color:rgba(255,255,255,0.95);}
+
+  .card-body{ padding:20px 20px 22px; display:flex; flex-direction:column; gap:10px; flex:1; }
+  .card-body h3{ font-size:1.15rem; color:var(--ink); }
+  .card-body p{ font-size:0.9rem; color:var(--ink-soft); flex:1; }
+  .price-row{ display:flex; align-items:center; justify-content:space-between; margin-top:6px; }
+  .price{ font-weight:900; color:var(--maroon); font-size:1.05rem; }
+  .order-btn{
+    background:var(--maroon); color:#FBF4E4; padding:9px 16px; border-radius:20px;
+    font-size:0.85rem; font-weight:700; display:flex; align-items:center; gap:6px;
+    transition:background .2s ease;
+  }
+  .order-btn:hover{background:var(--maroon-dark);}
+
+  .admin-del-card{
+    margin-top:4px; width:100%; justify-content:center; display:flex; align-items:center; gap:6px;
+    padding:8px; border-radius:10px; border:1px dashed var(--maroon); color:var(--maroon);
+    font-size:0.8rem; font-weight:700;
+  }
+  .admin-del-card:hover{background:rgba(122,27,46,0.08);}
+
+  .tabs{ display:flex; justify-content:center; gap:12px; margin-bottom:40px; }
+  .tab-btn{
+    background:transparent; border:1.5px solid var(--ink); padding:9px 24px; border-radius:24px;
+    font-weight:700; font-size:0.92rem; color:var(--ink); transition:all .2s ease;
+  }
+  .tab-btn.active{background:var(--ink); color:var(--bg);}
+
+  .category-block{display:none;}
+  .category-block.active{display:block;}
+
+  /* ---------- how to buy ---------- */
+  .how{ padding:80px 0; background:var(--bg-card); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:30px; margin-top:20px; }
+  .step{ text-align:center; padding:0 12px; }
+  .step-icon{
+    width:64px; height:64px; margin:0 auto 18px; border-radius:50%; background:var(--maroon);
+    color:#FBF4E4; display:flex; align-items:center; justify-content:center;
+    font-size:1.6rem; font-family:'Reem Kufi', sans-serif;
+  }
+  .step h3{ font-size:1.1rem; margin-bottom:8px; color:var(--ink); }
+  .step p{ color:var(--ink-soft); font-size:0.92rem; }
+
+  /* ---------- location ---------- */
+  .location{ padding:80px 0; }
+  .loc-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:stretch; }
+  .loc-card{ background:var(--bg-card); border:1px solid var(--line); border-radius:18px; padding:34px; }
+  .loc-card h3{ color:var(--maroon); font-size:1.3rem; margin-bottom:18px; }
+  .loc-row{ display:flex; gap:14px; margin-bottom:16px; align-items:flex-start; }
+  .loc-row .ic{
+    width:38px; height:38px; border-radius:50%; background:var(--teal); color:#F1E4CC;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .loc-row .ic svg{width:18px; height:18px;}
+  .loc-row div b{display:block; margin-bottom:2px;}
+  .loc-row div span{color:var(--ink-soft); font-size:0.92rem;}
+
+  .map-block{
+    background: repeating-linear-gradient(45deg, var(--teal) 0 2px, transparent 2px 22px), var(--maroon);
+    border-radius:18px; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    color:#FBF4E4; min-height:260px; text-align:center; padding:24px; font-weight:700;
+  }
+  .map-block svg{width:34px; height:34px; margin-bottom:10px;}
+
+  .big-cta{ margin-top:26px; width:100%; justify-content:center; font-size:1.05rem; }
+
+  /* ---------- footer ---------- */
+  footer{ background:var(--ink); color:#EADFC7; padding:50px 0 26px; }
+  .foot-grid{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px; margin-bottom:30px; }
+  .foot-logo{ font-size:1.5rem; color:var(--gold-light); }
+  .foot-links{ display:flex; gap:30px; flex-wrap:wrap; }
+  .foot-links a{opacity:0.85;}
+  .foot-links a:hover{opacity:1; color:var(--gold-light);}
+  .foot-bottom{
+    border-top:1px solid rgba(255,255,255,0.12); padding-top:20px; text-align:center;
+    font-size:0.85rem; opacity:0.7;
+  }
+  .foot-admin{ text-align:center; margin-top:14px; }
+  .foot-admin a{
+    display:inline-flex; align-items:center; gap:6px; font-size:0.78rem; opacity:0.55;
+  }
+  .foot-admin a:hover{opacity:1; color:var(--gold-light);}
+  .foot-admin .icon{width:13px; height:13px;}
+
+  /* ---------- admin modal ---------- */
+  .modal-overlay{
+    position:fixed; inset:0; background:rgba(20,10,6,0.6); display:none;
+    align-items:center; justify-content:center; z-index:1000; padding:20px;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal-box{
+    background:var(--bg-card); border-radius:20px; max-width:440px; width:100%;
+    padding:36px 30px; position:relative; max-height:90vh; overflow-y:auto;
+    box-shadow:0 30px 60px rgba(0,0,0,0.35);
+  }
+  .modal-close{
+    position:absolute; top:16px; left:16px; color:var(--ink-soft); width:30px; height:30px;
+    display:flex; align-items:center; justify-content:center; border-radius:50%;
+  }
+  .modal-close:hover{background:var(--line);}
+  .modal-close svg{width:18px; height:18px;}
+  .modal-box h3{ color:var(--maroon); font-size:1.35rem; margin-bottom:6px; }
+  .modal-sub{ color:var(--ink-soft); font-size:0.88rem; margin-bottom:24px; }
+  .field{margin-bottom:16px;}
+  .field label{ display:block; font-size:0.85rem; font-weight:700; margin-bottom:6px; color:var(--ink); }
+  .input-wrap{
+    display:flex; align-items:center; gap:8px; background:var(--bg); border:1px solid var(--line);
+    border-radius:10px; padding:10px 14px;
+  }
+  .input-wrap .icon{color:var(--ink-soft);}
+  .input-wrap input, .input-wrap select, .input-wrap textarea{
+    border:none; background:transparent; outline:none; width:100%;
+    font-family:inherit; font-size:0.95rem; color:var(--ink);
+  }
+  .input-wrap textarea{resize:vertical; min-height:60px;}
+  .error-msg{ color:var(--maroon); font-size:0.85rem; margin-bottom:12px; display:none; }
+  .error-msg.show{display:block;}
+  .admin-submit{width:100%; justify-content:center; margin-top:6px;}
+  .admin-header{ display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; }
+  .logout-link{ font-size:0.85rem; color:var(--maroon); font-weight:700; }
+  .admin-list{ margin-top:26px; border-top:1px solid var(--line); padding-top:18px; }
+  .admin-list h4{ font-size:1rem; margin-bottom:12px; color:var(--ink); }
+  .admin-item{
+    display:flex; align-items:center; justify-content:space-between; padding:9px 0;
+    border-bottom:1px dashed var(--line); font-size:0.87rem;
+  }
+  .admin-item .del-btn{ color:var(--maroon); width:26px; height:26px; display:flex; align-items:center; justify-content:center; }
+  .admin-item .del-btn svg{width:16px; height:16px;}
+  .admin-note{
+    background:rgba(122,27,46,0.08); border:1px solid rgba(122,27,46,0.22); border-radius:12px;
+    padding:14px 16px; font-size:0.8rem; color:var(--maroon-dark); margin-top:20px; line-height:1.7;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:860px){
+    nav ul{
+      position:fixed; top:70px; right:0; left:0; background:var(--bg); flex-direction:column;
+      padding:20px 24px; gap:18px; border-bottom:1px solid var(--line);
+      transform:translateY(-130%); transition:transform .3s ease;
+    }
+    nav ul.open{transform:translateY(0);}
+    .burger{display:flex;}
+    .cta-header{display:none;}
+    .story-grid{grid-template-columns:1fr; gap:30px;}
+    .story-mark{display:none;}
+    .steps{grid-template-columns:1fr;}
+    .loc-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-bar wrap">
+    <a href="#top" class="logo"><span class="kufi">رزق</span><span class="lat">RETHIQ</span></a>
+    <nav>
+      <ul id="navList">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#creams">الكريمات</a></li>
+        <li><a href="#perfumes">العطور</a></li>
+        <li><a href="#story">حكايتنا</a></li>
+        <li><a href="#contact">تواصل</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="cta-header">
+      <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.3 0-2.5-.3-3.6-.8L4 20l1-4.6A8.5 8.5 0 1 1 21 11.5z"></path></svg></span>
+      واتساب
+    </a>
+    <button class="burger" id="burgerBtn" aria-label="القائمة"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="weave"></div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="wrap" id="top">
+      <span class="eyebrow">كريمات · عطور · تراث سوداني، عجمان</span>
+      <h1>رزق</h1>
+      <p class="tag">جمال مستوحى من الصندل والكركديه والدلكة السودانية الأصيلة، بلمسة عصرية من قلب عجمان. تصفح المنتجات، وتواصل معانا واتساب، وتعال قابلنا في المحل.</p>
+      <div class="hero-actions">
+        <a href="#creams" class="btn-primary">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c8 1 14-5 14-14-9 0-14 6-14 14z"></path><line x1="5" y1="19" x2="14" y2="10"></line></svg></span>
+          تصفح المنتجات
+        </a>
+        <a href="#contact" class="btn-ghost">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.3 0-2.5-.3-3.6-.8L4 20l1-4.6A8.5 8.5 0 1 1 21 11.5z"></path></svg></span>
+          تواصل واتساب
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story" id="story">
+    <div class="wrap story-grid">
+      <div class="story-mark">"</div>
+      <div>
+        <h2>حكايتنا</h2>
+        <p>رزق ولدت من فكرة بسيطة: إن تراث الجمال السوداني — الصندل، الكركديه، الدلكة، والدخان — يستاهل ياخد مكانه في روتين العناية اليومي، من غير ما يفقد أصالته.</p>
+        <p>كل منتج عندنا نجمع فيه بين مكونات محلية موثوقة وتركيبات مدروسة، عشان توصلك تجربة جمال حقيقية، مش بس منتج على الرف.</p>
+        <p>وما بنبيع أونلاين — بنحب نشوف زبائننا وجه لوجه، نسمع احتياجهم، ونساعدهم يختارو الصح.</p>
+        <div class="ritual-tags">
+          <span>صندل</span>
+          <span>كركديه</span>
+          <span>دلكة تقليدية</span>
+          <span>شيا وعسل بلدي</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="weave"></div>
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">منتجاتنا</span>
+        <h2>الكريمات والعطور</h2>
+        <p>كل قطعة بتحكي حكاية من تراثنا. اختار اللي يعجبك وتواصل معانا لتأكيد التوفر والسعر.</p>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-target="creams">الكريمات</button>
+        <button class="tab-btn" data-target="perfumes">العطور</button>
+      </div>
+
+      <div class="category-block active" id="creams">
+        <div class="grid" id="creamsGrid"></div>
+      </div>
+
+      <div class="category-block" id="perfumes">
+        <div class="grid" id="perfumesGrid"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW TO BUY -->
+  <section class="how">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">طريقة الشراء</span>
+        <h2>ما في دفع أونلاين — بنقابلك في المحل</h2>
+        <p>عايزين نشوفك ونتأكد إنك مبسوط بالمنتج قبل ما تدفع.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-icon">١</div>
+          <h3>اختار المنتج</h3>
+          <p>تصفح الكريمات والعطور واختار اللي يعجبك من الموقع.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">٢</div>
+          <h3>تواصل واتساب</h3>
+          <p>ابعت رسالة لتأكيد التوفر والسعر، وحدد وقت مناسب ليك.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">٣</div>
+          <h3>قابلنا في المحل</h3>
+          <p>تعال شوف المنتج، جربه، وادفع واستلم مباشرة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION / CONTACT -->
+  <section class="location" id="contact">
+    <div class="wrap loc-grid">
+      <div class="loc-card">
+        <h3>تواصل معانا</h3>
+        <div class="loc-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.3 0-2.5-.3-3.6-.8L4 20l1-4.6A8.5 8.5 0 1 1 21 11.5z"></path></svg></div>
+          <div><b>واتساب</b><span dir="ltr">+971 50 458 4961</span></div>
+        </div>
+        <div class="loc-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.3"></circle></svg></div>
+          <div><b>الموقع</b><span>بالقرب من شارع خليفة بن زايد، عجمان — الإمارات العربية المتحدة</span></div>
+        </div>
+        <div class="loc-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><polyline points="12 7.5 12 12 15.5 14"></polyline></svg></div>
+          <div><b>أوقات الدوام</b><span>مثال: الأحد–الخميس، ١٠ص–١٠م</span></div>
+        </div>
+        <button class="btn-primary big-cta" onclick="orderViaWhatsApp('', '')">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.3 0-2.5-.3-3.6-.8L4 20l1-4.6A8.5 8.5 0 1 1 21 11.5z"></path></svg></span>
+          تواصل واتساب الآن
+        </button>
+      </div>
+      <div class="map-block">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.3"></circle></svg>
+        عجمان، الإمارات العربية المتحدة
+        <br>
+        <span style="font-weight:400; font-size:0.85rem; opacity:0.85; margin-top:6px;">(ضيف رابط خرائط قوقل أو صورة الموقع هنا لاحقاً)</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="weave"></div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <span class="foot-logo kufi">رزق</span>
+      <div class="foot-links">
+        <a href="#home">الرئيسية</a>
+        <a href="#creams">الكريمات</a>
+        <a href="#perfumes">العطور</a>
+        <a href="#story">حكايتنا</a>
+        <a href="#contact">تواصل</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 رزق Rethiq — جميع الحقوق محفوظة</div>
+    <div class="foot-admin">
+      <a href="#" id="adminLinkBtn">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="9.5" rx="2"></rect><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"></path></svg></span>
+        لوحة الإدارة
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ADMIN MODAL -->
+<div class="modal-overlay" id="adminOverlay">
+  <div class="modal-box">
+    <button class="modal-close" id="modalCloseBtn" aria-label="إغلاق">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
+    </button>
+
+    <div id="loginView">
+      <h3>لوحة إدارة رزق</h3>
+      <p class="modal-sub">سجّل دخول لإضافة أو إدارة المنتجات.</p>
+      <div class="field">
+        <label>اسم المستخدم</label>
+        <div class="input-wrap">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M5 20c0-3.9 3.1-6.5 7-6.5s7 2.6 7 6.5"></path></svg></span>
+          <input type="text" id="adminUser" placeholder="اسم المستخدم" autocomplete="off">
+        </div>
+      </div>
+      <div class="field">
+        <label>كلمة السر</label>
+        <div class="input-wrap">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="9.5" rx="2"></rect><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"></path></svg></span>
+          <input type="password" id="adminPass" placeholder="كلمة السر" autocomplete="off">
+        </div>
+      </div>
+      <p class="error-msg" id="loginError">اسم المستخدم أو كلمة السر غير صحيحة.</p>
+      <button class="btn-primary admin-submit" id="loginSubmitBtn">دخول</button>
+    </div>
+
+    <div id="dashboardView" style="display:none;">
+      <div class="admin-header">
+        <h3 style="margin:0;">إضافة منتج جديد</h3>
+        <a href="#" id="logoutBtn" class="logout-link">تسجيل خروج</a>
+      </div>
+      <form id="addProductForm">
+        <div class="field">
+          <label>اسم المنتج</label>
+          <div class="input-wrap"><input type="text" id="newName" placeholder="مثال: كريم الورد البلدي" required></div>
+        </div>
+        <div class="field">
+          <label>القسم</label>
+          <div class="input-wrap">
+            <select id="newCategory">
+              <option value="cream">كريمات</option>
+              <option value="perfume">عطور</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>السعر</label>
+          <div class="input-wrap"><input type="text" id="newPrice" placeholder="مثال: 16,000 ج.س" required></div>
+        </div>
+        <div class="field">
+          <label>الوصف</label>
+          <div class="input-wrap"><textarea id="newDesc" placeholder="وصف مختصر للمنتج"></textarea></div>
+        </div>
+        <div class="field">
+          <label>الأيقونة</label>
+          <div class="input-wrap">
+            <select id="newIcon">
+              <option value="jar">برطمان</option>
+              <option value="flower">زهرة</option>
+              <option value="droplet">قطرة</option>
+              <option value="moon">هلال</option>
+              <option value="flame">شعلة</option>
+              <option value="leaf">ورقة</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary admin-submit">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+          إضافة المنتج
+        </button>
+      </form>
+
+      <div class="admin-list">
+        <h4>المنتجات الحالية (<span id="productCount">0</span>)</h4>
+        <div id="adminProductList"></div>
+      </div>
+
+      <div class="admin-note">
+        ملاحظة: هذه لوحة إدارة تجريبية تعمل محلياً داخل المتصفح فقط. المنتجات المُضافة بتختفي عند تحديث الصفحة، ولن تظهر لزوار آخرين، وكلمة السر مكتوبة داخل كود الصفحة فما هي آمنة لبيانات حقيقية. لو حبيت لوحة إدارة حقيقية تحفظ البيانات بشكل دائم وبأمان، بنحتاج نربطها بقاعدة بيانات زي Firebase.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // ============ إعدادات عامة ============
+  // رقم الواتساب بصيغة دولية بدون + أو صفر البداية
+  const WHATSAPP_NUMBER = "971504584961";
+
+  // بيانات دخول لوحة الإدارة — غيّرها زي ما تحب
+  const ADMIN_USERNAME = "rethiq_admin";
+  const ADMIN_PASSWORD = "Rzq@2026";
+
+  // ============ مكتبة الأيقونات ============
+  const ICONS = {
+    jar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="3" rx="1"></rect><rect x="5" y="8" width="14" height="12" rx="3"></rect><line x1="9" y1="12" x2="9" y2="16"></line><line x1="15" y1="12" x2="15" y2="16"></line></svg>',
+    flower: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.3"></circle><circle cx="12" cy="6" r="2.3"></circle><circle cx="12" cy="18" r="2.3"></circle><circle cx="6" cy="12" r="2.3"></circle><circle cx="18" cy="12" r="2.3"></circle></svg>',
+    droplet: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c4 5 6.5 8.2 6.5 11.2A6.5 6.5 0 0 1 12 21a6.5 6.5 0 0 1-6.5-6.8C5.5 11.2 8 8 12 3z"></path></svg>',
+    moon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"></path></svg>',
+    flame: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 3-3 4-3 7.5A3.5 3.5 0 0 0 12 14a3.5 3.5 0 0 0 3-5.3c1.2 1 2 2.7 2 4.3a5 5 0 1 1-10 0C7 9.5 9.5 7 12 3z"></path></svg>',
+    leaf: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c8 1 14-5 14-14-9 0-14 6-14 14z"></path><line x1="5" y1="19" x2="14" y2="10"></line></svg>',
+    chat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.3 0-2.5-.3-3.6-.8L4 20l1-4.6A8.5 8.5 0 1 1 21 11.5z"></path></svg>',
+    trash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="7" x2="19" y2="7"></line><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path><path d="M7 7l1 12a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1l1-12"></path></svg>'
+  };
+
+  // ============ حالة المنتجات (محلية فقط — تعمل داخل الجلسة الحالية) ============
+  let products = [
+    {id:1, category:'cream', icon:'jar', name:'كريم الصندل الملكي', desc:'تركيبة غنية بالصندل الطبيعي لترطيب عميق وتوحيد لون البشرة.', price:'15,000 ج.س'},
+    {id:2, category:'cream', icon:'flower', name:'كريم الكركديه المنعش', desc:'مستخلص الكركديه الطبيعي لإشراقة فورية ونضارة تدوم طول اليوم.', price:'12,500 ج.س'},
+    {id:3, category:'cream', icon:'droplet', name:'كريم الشيا والعسل البلدي', desc:'مزيج زبدة الشيا الطبيعية والعسل البلدي لتغذية عميقة للبشرة الجافة.', price:'14,000 ج.س'},
+    {id:4, category:'cream', icon:'moon', name:'دلكة الليل التقليدية', desc:'دلكة سودانية أصيلة بوصفة تقليدية لتنعيم وتفتيح البشرة تدريجياً.', price:'18,000 ج.س'},
+    {id:5, category:'perfume', icon:'flower', name:'عطر دلال', desc:'نفحة زهرية دافئة بلمسة مسك، مصممة للإطلالة اليومية الأنيقة.', price:'22,000 ج.س'},
+    {id:6, category:'perfume', icon:'droplet', name:'عطر النيل الأزرق', desc:'خلطة منعشة من نفحات مائية وخشبية، تدوم من الصباح للمسا.', price:'25,000 ج.س'},
+    {id:7, category:'perfume', icon:'flame', name:'خمرة السودان', desc:'زيت عطري تقليدي غامق التركيز، مستوحى من وصفات الخمرة السودانية الأصيلة.', price:'28,000 ج.س'},
+    {id:8, category:'perfume', icon:'leaf', name:'عطر الصندل والمسك', desc:'مزيج خشبي دافئ من الصندل والمسك، للحضور القوي والمميز.', price:'24,000 ج.س'}
+  ];
+  let nextId = 9;
+  let isAdmin = false;
+
+  function esc(str){
+    const d = document.createElement('div');
+    d.textContent = str == null ? '' : str;
+    return d.innerHTML;
+  }
+
+  function orderViaWhatsApp(productName, price){
+    let message;
+    if(productName){
+      message = `السلام عليكم، حابب أستفسر عن "${productName}" (${price}). ممكن تأكدو التوفر ونحدد موعد مقابلة؟`;
+    } else {
+      message = "السلام عليكم، حابب أستفسر عن منتجاتكم عند رزق.";
+    }
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  }
+
+  // ============ عرض المنتجات ============
+  function cardHTML(p){
+    return `
+      <div class="card">
+        <div class="card-media ${p.category}">${ICONS[p.icon] || ICONS.jar}</div>
+        <div class="card-body">
+          <h3>${esc(p.name)}</h3>
+          <p>${esc(p.desc)}</p>
+          <div class="price-row">
+            <span class="price">${esc(p.price)}</span>
+            <button class="order-btn" data-order-id="${p.id}">${ICONS.chat} اطلب</button>
+          </div>
+          ${isAdmin ? `<button class="admin-del-card" data-delete-id="${p.id}">${ICONS.trash} حذف المنتج</button>` : ''}
+        </div>
+      </div>`;
+  }
+
+  function emptyMsg(){
+    return '<p style="color:var(--ink-soft); grid-column:1/-1; text-align:center; padding:20px;">لا توجد منتجات في هذا القسم بعد.</p>';
+  }
+
+  function renderProducts(){
+    const creamGrid = document.getElementById('creamsGrid');
+    const perfumeGrid = document.getElementById('perfumesGrid');
+    const creams = products.filter(p => p.category === 'cream');
+    const perfumes = products.filter(p => p.category === 'perfume');
+    creamGrid.innerHTML = creams.map(cardHTML).join('') || emptyMsg();
+    perfumeGrid.innerHTML = perfumes.map(cardHTML).join('') || emptyMsg();
+    observeCards();
+  }
+
+  function renderAdminList(){
+    const list = document.getElementById('adminProductList');
+    document.getElementById('productCount').textContent = products.length;
+    list.innerHTML = products.map(p => `
+      <div class="admin-item">
+        <span>${esc(p.name)} — ${esc(p.price)}</span>
+        <button class="del-btn" data-delete-id="${p.id}">${ICONS.trash}</button>
+      </div>`).join('');
+  }
+
+  function deleteProduct(id){
+    products = products.filter(p => p.id !== id);
+    renderProducts();
+    if(isAdmin) renderAdminList();
+  }
+
+  // نقرات موزّعة لأزرار الطلب والحذف (تشتغل حتى مع العناصر المُضافة لاحقاً)
+  document.addEventListener('click', (e) => {
+    const orderBtn = e.target.closest('[data-order-id]');
+    if(orderBtn){
+      const p = products.find(pr => pr.id === Number(orderBtn.dataset.orderId));
+      if(p) orderViaWhatsApp(p.name, p.price);
+      return;
+    }
+    const delBtn = e.target.closest('[data-delete-id]');
+    if(delBtn){
+      deleteProduct(Number(delBtn.dataset.deleteId));
+    }
+  });
+
+  // ============ لوحة الإدارة ============
+  const adminOverlay = document.getElementById('adminOverlay');
+  const loginView = document.getElementById('loginView');
+  const dashboardView = document.getElementById('dashboardView');
+
+  document.getElementById('adminLinkBtn').addEventListener('click', (e) => {
+    e.preventDefault();
+    adminOverlay.classList.add('open');
+  });
+  document.getElementById('modalCloseBtn').addEventListener('click', () => adminOverlay.classList.remove('open'));
+  adminOverlay.addEventListener('click', (e) => { if(e.target === adminOverlay) adminOverlay.classList.remove('open'); });
+
+  document.getElementById('loginSubmitBtn').addEventListener('click', () => {
+    const u = document.getElementById('adminUser').value.trim();
+    const p = document.getElementById('adminPass').value;
+    const err = document.getElementById('loginError');
+    if(u === ADMIN_USERNAME && p === ADMIN_PASSWORD){
+      isAdmin = true;
+      err.classList.remove('show');
+      loginView.style.display = 'none';
+      dashboardView.style.display = 'block';
+      renderAdminList();
+      renderProducts();
+    } else {
+      err.classList.add('show');
+    }
+  });
+
+  document.getElementById('logoutBtn').addEventListener('click', (e) => {
+    e.preventDefault();
+    isAdmin = false;
+    dashboardView.style.display = 'none';
+    loginView.style.display = 'block';
+    document.getElementById('adminUser').value = '';
+    document.getElementById('adminPass').value = '';
+    renderProducts();
+  });
+
+  document.getElementById('addProductForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('newName').value.trim();
+    const category = document.getElementById('newCategory').value;
+    const price = document.getElementById('newPrice').value.trim();
+    const desc = document.getElementById('newDesc').value.trim() || 'منتج مميز من رزق.';
+    const icon = document.getElementById('newIcon').value;
+    if(!name || !price) return;
+    products.push({id: nextId++, category, icon, name, price, desc});
+    e.target.reset();
+    renderProducts();
+    renderAdminList();
+  });
+
+  // ============ التنقل والقوائم ============
+  const burger = document.getElementById("burgerBtn");
+  const navList = document.getElementById("navList");
+  burger.addEventListener("click", () => navList.classList.toggle("open"));
+  navList.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navList.classList.remove("open")));
+
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".category-block").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      document.getElementById(btn.dataset.target).classList.add("active");
+    });
+  });
+
+  // ============ ظهور تدريجي للبطاقات ============
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add("in-view"); });
+  }, {threshold:0.15});
+  function observeCards(){
+    document.querySelectorAll(".card").forEach(c => io.observe(c));
+  }
+
+  // ============ تشغيل أولي ============
+  renderProducts();
+</script>
+
+</body>
+</html>
